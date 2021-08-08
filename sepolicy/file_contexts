@@ -2,7 +2,7 @@
 /(vendor|system/vendor)/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
-/persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/\.baddr                                         u:object_r:mnt_vendor_file:s0
 
 # Camera
 /data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
@@ -49,6 +49,7 @@
 /sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
 
 # MPT
+/mnt/vendor/mpt(/.*)?                                               u:object_r:mpt_file:s0
 /mpt(/.*)?                                                          u:object_r:mpt_file:s0
 
 # Netmgr
@@ -58,30 +59,14 @@
 /dev/pn54[478]                                                      u:object_r:nfc_device:s0
 
 # Persist
+/mnt/vendor/persist(/.*)?                                           u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist-lg(/.*)?                                        u:object_r:mediadrm_vendor_data_file:s0
+/mnt/vendor/persist/rct(.*)                                         u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/encryption_log                                  u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/properties                                      u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/usf                                             u:object_r:mnt_vendor_file:s0
 /persist(/.*)?                                                      u:object_r:mnt_vendor_file:s0
 /persist-lg(/.*)?                                                   u:object_r:mediadrm_vendor_data_file:s0
-/persist/rct(.*)                                                    u:object_r:mnt_vendor_file:s0
-/persist/encryption_log                                             u:object_r:mnt_vendor_file:s0
-/persist/properties                                                 u:object_r:mnt_vendor_file:s0
-/persist/usf                                                        u:object_r:mnt_vendor_file:s0
-/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
-/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
-/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
-/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
-/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
-/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
-/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
-/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
-/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
-/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
-/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
-/persist/rfs(/.*)?                                                  u:object_r:persist_rfs_file:s0
-/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
-/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
-/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
-/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
-/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
-/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
 
 # Power management
 /sys/devices/soc/qpnp-smbcharger-16/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
@@ -96,14 +81,15 @@
 /sys/kernel/debug/rmt_storage(/.*)?                                 u:object_r:debugfs_rmts:s0
 
 # Sensors
-/sns/cal/sns.reg                                                    u:object_r:sensors_data_file:s0
-/sns.reg                                                            u:object_r:sensors_data_file:s0
-/sns/cal                                                            u:object_r:sensors_data_file:s0
-/sns                                                                u:object_r:sensors_data_file:s0
-/sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
-/persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
-/sns/(/.*)?                                                         u:object_r:sensors_persist_file:s0
+/mnt/vendor/sns/cal/mnt/vendor/sns.reg                              u:object_r:sensors_data_file:s0
+/mnt/vendor/sns.reg                                                 u:object_r:sensors_data_file:s0
+/mnt/vendor/sns/cal                                                 u:object_r:sensors_data_file:s0
+/mnt/vendor/sns                                                     u:object_r:sensors_data_file:s0
+/mnt/vendor/sns/cal(/.*)?                                           u:object_r:sensors_data_file:s0
+/mnt/vendor/persist-lg/sensors(/.*)?                                u:object_r:sensors_persist_file:s0
+/mnt/vendor/sns/(/.*)?                                              u:object_r:sensors_persist_file:s0
 /mnt/vendor/sns/cal/sns.reg                                         u:object_r:sensors_data_file:s0
+/sns                                                                u:object_r:sensors_data_file:s0
 
 # SPI
 /sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
@@ -113,7 +99,7 @@
 
 # WLAN
 /sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
-/persist/\.macaddr                                                  u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/\.macaddr                                       u:object_r:mnt_vendor_file:s0
 
 # perfd
 /(vendor|system/vendor)/bin/perfd                                   u:object_r:perfd_exec:s0
