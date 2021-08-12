@@ -1,6 +1,9 @@
 [AID_VENDOR_QTI_DIAG]
 value:2901
 
+[AID_VENDOR_THERMAL]
+value:2907
+
 [vendor/bin/pm-service]
 mode: 0755
 user: AID_SYSTEM

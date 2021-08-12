@@ -26,15 +26,31 @@
 
 static char *cpu_sensors_8996[] =
 {
+    "tsens_tz_sensor1",
+    "tsens_tz_sensor2",
+    "tsens_tz_sensor3",
     "tsens_tz_sensor4",
+    "tsens_tz_sensor5",
     "tsens_tz_sensor6",
+    "tsens_tz_sensor7",
+    "tsens_tz_sensor8",
     "tsens_tz_sensor9",
+    "tsens_tz_sensor10",
     "tsens_tz_sensor11",
+    "tsens_tz_sensor12",
+    "tsens_tz_sensor13",
+    "tsens_tz_sensor14",
+    "tsens_tz_sensor15",
+    "tsens_tz_sensor16",
+    "tsens_tz_sensor17",
+    "tsens_tz_sensor18",
+    "tsens_tz_sensor19",
+    "tsens_tz_sensor20",
 };
 
 static char *misc_sensors_8996[] =
 {
-    "tsens_tz_sensor15",
+    "gpu_tmu",
     "battery",
     "xo_therm_buf"
 };
