@@ -15,3 +15,11 @@ set_prop(thermal-engine,system_prop);
 
 allow thermal-engine vendor_default_prop:property_service set;
 allow thermal-engine mnt_vendor_file:dir { search };
+allow thermal-engine device:file { open write };
+allow thermal-engine hal_thermal_hwservice:hwservice_manager add;
+allow thermal-engine hidl_base_hwservice:hwservice_manager add;
+allow thermal-engine hwservicemanager:binder { call };
+allow thermal-engine hwservicemanager:binder transfer;
+allow thermal-engine hwservicemanager_prop:file read;
+allow thermal-engine hwservicemanager_prop:file open;
+allow thermal-engine hwservicemanager_prop:file getattr;

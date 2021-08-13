@@ -134,6 +134,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.sensors.sh \
+    init.qcom.post_boot.sh \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc \
@@ -313,7 +314,9 @@ PRODUCT_PACKAGES += \
 
 # Power - AIDL
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service-qti \
+		android.hardware.power.stats@1.0-service.mock \
+		vendor.qti.hardware.perf@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \

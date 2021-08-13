@@ -1,6 +1,9 @@
 [AID_VENDOR_QTI_DIAG]
 value:2901
 
+[AID_VENDOR_THERMAL]
+value:2907
+
 [vendor/bin/pm-service]
 mode: 0755
 user: AID_SYSTEM
@@ -91,25 +94,25 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[persist/]
+[mnt/vendor/persist/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[persist-lg/]
+[mnt/vendor/persist-lg/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[sns/]
+[mnt/vendor/sns/]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[mpt/]
+[mnt/vendor/mpt/]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
